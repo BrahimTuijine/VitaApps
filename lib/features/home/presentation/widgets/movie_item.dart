@@ -53,26 +53,6 @@ class MovieItem extends StatelessWidget {
                 fontWeight: FontWeight.w400,
               ),
             ),
-            // leading: CachedNetworkImage(
-            //   imageUrl: image,
-            //   placeholder: (context, url) => SizedBox(),
-            //   errorWidget: (context, url, error) => SizedBox(
-            //     width: 60.fh,
-            //     height: 60.fh,
-            //   ),
-            //   imageBuilder: (context, imageProvider) {
-            //     return ClipOval(
-            //       child: Container(
-            //         width: 60.fh,
-            //         height: 60.fh,
-            //         decoration: BoxDecoration(
-            //           image:
-            //               DecorationImage(image: imageProvider, fit: BoxFit.fill),
-            //         ),
-            //       ),
-            //     );
-            //   },
-            // ),
           ),
         ),
       ),

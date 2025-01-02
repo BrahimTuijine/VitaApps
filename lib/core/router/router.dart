@@ -13,7 +13,6 @@ import '../../features/onboarding/presentation/views/onboarding_screen.dart';
 part '../../features/home/presentation/routes/home_routes.dart';
 part '../../features/login/presentation/routes/login_routes.dart';
 part '../../features/onboarding/presentation/routes/onboarding_routes.dart';
-part '../../features/movie_details/presentation/routes/movie_details_routes.dart';
 
 part 'router.g.dart';
 
