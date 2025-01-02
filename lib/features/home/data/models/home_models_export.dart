@@ -1,1 +1,1 @@
-export 'home_model.dart';
+export 'movie_list_model.dart';

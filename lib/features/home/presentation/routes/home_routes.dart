@@ -5,5 +5,9 @@ class HomeRoute extends GoRouteData {
   const HomeRoute();
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => HomeScreen();
+  Widget build(BuildContext context, GoRouterState state) => BlocProvider(
+        create: (context) =>
+            getIt<GetMoviesListBloc>()..add(GetMoviesListEvent.getMoviesList()),
+        child: HomeScreen(),
+      );
 }

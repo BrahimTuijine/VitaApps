@@ -4,7 +4,6 @@ extension BlocBaseExtension on BlocBase {
   String get arrangedString => '$runtimeType($hashCode)';
 }
 
-
 extension BlocBaseIterableExtension on Iterable<BlocBase> {
-  String get arrangedString => '${map((bloc)  => bloc.arrangedString)}';
+  String get arrangedString => '${map((bloc) => bloc.arrangedString)}';
 }

@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class Env {
-    static String get fileName => switch (kReleaseMode) {
+  static String get fileName => switch (kReleaseMode) {
         true => '.env.production',
         _ => '.env.development'
       };
