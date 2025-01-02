@@ -22,14 +22,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.11.0"
-  animated_theme_switcher:
-    dependency: "direct main"
-    description:
-      name: animated_theme_switcher
-      sha256: "24ccd74437b8db78f6d1ec701804702817bced5f925b1b3419c7a93071e3d3e9"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.10"
   args:
     dependency: transitive
     description:
@@ -517,6 +509,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.1"
+  hydrated_bloc:
+    dependency: "direct main"
+    description:
+      name: hydrated_bloc
+      sha256: af35b357739fe41728df10bec03aad422cdc725a1e702e03af9d2a41ea05160c
+      url: "https://pub.dev"
+    source: hosted
+    version: "9.1.5"
   image_size_getter:
     dependency: transitive
     description:

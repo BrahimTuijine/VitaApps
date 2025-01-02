@@ -1,9 +1,8 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vita_apps/core/extensions/num.dart';
 import 'package:vita_apps/core/router/router.dart';
-import 'package:vita_apps/core/theme/theme.dart';
+import 'package:vita_apps/features/dark_mode/theme_cubit.dart';
 import 'package:vita_apps/features/home/presentation/blocs/get_movies_list/get_movies_list_bloc.dart';
 import 'package:vita_apps/features/home/presentation/widgets/movie_item.dart';
 
@@ -17,17 +16,12 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Movies List'),
         actions: [
-          ThemeSwitcher.withTheme(
-            clipper: ThemeSwitcherCircleClipper(),
-            builder: (_, switcher, theme) {
+          BlocBuilder<ThemeCubit, ThemeMode>(
+            builder: (context, state) {
               return IconButton(
-                onPressed: () => switcher.changeTheme(
-                  theme: theme.brightness == Brightness.light
-                      ? darkTheme
-                      : lightTheme,
-                ),
+                onPressed: () => context.read<ThemeCubit>().toggleTheme(),
                 icon: Icon(
-                    theme.brightness == Brightness.light
+                    state == ThemeMode.light
                         ? Icons.brightness_3
                         : Icons.sunny,
                     size: 25),
