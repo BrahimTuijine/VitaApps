@@ -30,7 +30,12 @@ class MovieDetailsScreen extends StatelessWidget {
                     Center(
                       child: Image.network(
                         movie.poster,
-                        height: 300,
+                        height: 300.fh,
+                        loadingBuilder: (context, child, loadingProgress) =>
+                            SizedBox(
+                          height: 300.fh,
+                          child: Center(child: CircularProgressIndicator()),
+                        ),
                       ),
                     ),
                     // CachedNetworkImage(
