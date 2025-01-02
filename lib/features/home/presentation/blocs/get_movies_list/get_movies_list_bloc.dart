@@ -23,6 +23,7 @@ class GetMoviesListBloc extends Bloc<GetMoviesListEvent, GetMoviesListState> {
       result.fold((failure) {
         emit(GetMoviesListState.error(message: failure.message));
       }, (result) {
+        //TODO filer this before emit it
         emit(GetMoviesListState.loaded(result: result));
       });
     });

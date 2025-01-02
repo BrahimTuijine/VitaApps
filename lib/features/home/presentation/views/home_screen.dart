@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vita_apps/core/extensions/num.dart';
+import 'package:vita_apps/core/router/router.dart';
 import 'package:vita_apps/features/home/presentation/blocs/get_movies_list/get_movies_list_bloc.dart';
 import 'package:vita_apps/features/home/presentation/widgets/movie_item.dart';
 
@@ -31,6 +32,8 @@ class HomeScreen extends StatelessWidget {
               return AppAnimatedList(
                 index: index,
                 child: MovieItem(
+                  onTap: () =>
+                      MovieDetailsRoute($extra: movie.imdbId).push(context),
                   name: movie.title,
                   subtitle: movie.imdbVotes,
                   rating: movie.imdbRating,

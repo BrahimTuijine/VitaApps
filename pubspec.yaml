@@ -5,6 +5,7 @@ version: 1.0.0+1
 environment:
   sdk: ^3.6.0
 dependencies:
+  animated_theme_switcher: ^2.0.10
   cached_network_image: ^3.4.1
   connectivity_plus: ^6.1.0
   cupertino_icons: ^1.0.8

@@ -27,7 +27,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Sizer(
         builder: (context, _, __) => MaterialApp.router(
-          
           debugShowCheckedModeBanner: kDebugMode || kProfileMode,
           themeMode: ThemeMode.system,
           theme: ThemeData.light(useMaterial3: false),
