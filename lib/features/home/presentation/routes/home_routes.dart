@@ -1,22 +1,17 @@
 part of '../../../../core/router/router.dart';
 
-@TypedGoRoute<HomeRoute>(
-  path: '/',
-  routes: [
-    TypedGoRoute<MovieDetailsRoute>(path: 'movieDetails'),
-  ],
-)
-class HomeRoute extends GoRouteData {
-  const HomeRoute();
+// class HomeRoute extends GoRouteData {
+//   const HomeRoute();
 
-  @override
-  Widget build(BuildContext context, GoRouterState state) => BlocProvider(
-        create: (context) =>
-            getIt<GetMoviesListBloc>()..add(GetMoviesListEvent.getMoviesList()),
-        child: HomeScreen(),
-      );
-}
+//   @override
+//   Widget build(BuildContext context, GoRouterState state) => BlocProvider(
+//         create: (context) =>
+//             getIt<GetMoviesListBloc>()..add(GetMoviesListEvent.getMoviesList()),
+//         child: HomeScreen(),
+//       );
+// }
 
+// @TypedGoRoute<MovieDetailsRoute>(path: '/movieDetail')
 class MovieDetailsRoute extends GoRouteData {
   MovieDetailsRoute({
     required this.$extra,

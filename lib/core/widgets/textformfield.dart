@@ -39,7 +39,7 @@ class AppTextFormField extends HookWidget {
         if (title != null) ...[
           AppText(
             title!,
-            style: context.paragraph.copyWith(color: Colors.black),
+            style: context.paragraph,
           ),
           SizedBox(height: 12),
         ],

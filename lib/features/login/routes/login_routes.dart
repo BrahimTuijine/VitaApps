@@ -1,4 +1,4 @@
-part of '../../../../core/router/router.dart';
+part of '../../../core/router/router.dart';
 
 @TypedGoRoute<LoginRoute>(path: '/login')
 class LoginRoute extends GoRouteData {

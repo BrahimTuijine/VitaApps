@@ -4,9 +4,10 @@ import 'package:vita_apps/core/extensions/num.dart';
 import 'package:vita_apps/core/router/router.dart';
 import 'package:vita_apps/core/widgets/text.dart';
 
-import '../../../../core/validators/validators.dart';
-import '../../../../core/widgets/elevated_button.dart';
-import '../../../../core/widgets/textformfield.dart';
+import '../../../core/storage/save_data.dart';
+import '../../../core/validators/validators.dart';
+import '../../../core/widgets/elevated_button.dart';
+import '../../../core/widgets/textformfield.dart';
 import '../model/login_model.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -69,6 +70,7 @@ class LoginScreen extends StatelessWidget {
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
                         formKey.currentState!.save();
+                        LoginDataManager.saveLoginData(loginModel);
                         HomeRoute().pushReplacement(context);
                       }
                     },

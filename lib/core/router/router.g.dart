@@ -7,27 +7,42 @@ part of 'router.dart';
 // **************************************************************************
 
 List<RouteBase> get $appRoutes => [
-      $homeRoute,
+      $dashboardShellRoute,
       $loginRoute,
       $onboardingRoute,
     ];
 
-RouteBase get $homeRoute => GoRouteData.$route(
-      path: '/',
-      factory: $HomeRouteExtension._fromState,
+RouteBase get $dashboardShellRoute => ShellRouteData.$route(
+      navigatorKey: DashboardShellRoute.$navigatorKey,
+      factory: $DashboardShellRouteExtension._fromState,
       routes: [
         GoRouteData.$route(
-          path: 'movieDetails',
-          factory: $MovieDetailsRouteExtension._fromState,
+          path: '/home',
+          factory: $HomeRouteExtension._fromState,
+          routes: [
+            GoRouteData.$route(
+              path: 'movieDetails',
+              factory: $MovieDetailsRouteExtension._fromState,
+            ),
+          ],
+        ),
+        GoRouteData.$route(
+          path: '/profile',
+          factory: $ProfileRouteExtension._fromState,
         ),
       ],
     );
 
+extension $DashboardShellRouteExtension on DashboardShellRoute {
+  static DashboardShellRoute _fromState(GoRouterState state) =>
+      const DashboardShellRoute();
+}
+
 extension $HomeRouteExtension on HomeRoute {
-  static HomeRoute _fromState(GoRouterState state) => const HomeRoute();
+  static HomeRoute _fromState(GoRouterState state) => HomeRoute();
 
   String get location => GoRouteData.$location(
-        '/',
+        '/home',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -47,7 +62,7 @@ extension $MovieDetailsRouteExtension on MovieDetailsRoute {
       );
 
   String get location => GoRouteData.$location(
-        '/movieDetails',
+        '/home/movieDetails',
         queryParams: {
           'title': title,
         },
@@ -63,6 +78,23 @@ extension $MovieDetailsRouteExtension on MovieDetailsRoute {
 
   void replace(BuildContext context) =>
       context.replace(location, extra: $extra);
+}
+
+extension $ProfileRouteExtension on ProfileRoute {
+  static ProfileRoute _fromState(GoRouterState state) => ProfileRoute();
+
+  String get location => GoRouteData.$location(
+        '/profile',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 RouteBase get $loginRoute => GoRouteData.$route(
