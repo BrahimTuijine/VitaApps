@@ -18,14 +18,14 @@ class HomeDataSourceImpl implements HomeDataSource {
     try {
       final response = await MovieAPI.index();
 
-      final List<Map<String, dynamic>> result = json.decode(response);
+      final List<dynamic> result = json.decode(response);
 
       return compute(
           (res) =>
               List<MovieModel>.from(result.map((x) => MovieModel.fromJson(x))),
           result);
-    } catch (e) {
-      throw ServerException();
+    } catch (error) {
+      throw ServerException(serverError: error.toString());
     }
   }
 }

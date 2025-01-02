@@ -16,7 +16,7 @@ part 'router.g.dart';
 
 class AppRouter {
   static final GoRouter router = GoRouter(
-    initialLocation: OnboardingRoute().location,
+    initialLocation: HomeRoute().location,
     routes: $appRoutes,
   );
 }

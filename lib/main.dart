@@ -27,10 +27,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Sizer(
         builder: (context, _, __) => MaterialApp.router(
+          
           debugShowCheckedModeBanner: kDebugMode || kProfileMode,
           themeMode: ThemeMode.system,
-          theme: ThemeData.light(),
-          darkTheme: ThemeData.dark(),
+          theme: ThemeData.light(useMaterial3: false),
+          darkTheme: ThemeData.dark(useMaterial3: false),
           builder: (context, child) => GestureDetector(
             onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
             child: child,
